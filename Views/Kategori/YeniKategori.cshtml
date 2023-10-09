@@ -1,0 +1,24 @@
+﻿@model MvcStokProjesi.Models.Entity.Tbl_Kategoriler
+@{
+    ViewBag.Title = "YeniKategori";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    @*form butona tıkladığımız zaman işleyecek ve tıklama işlemi post işlemi olduğundan*@
+    @*arka plandaki HttpPost kısmı çalışacak.*@
+    <div>
+        <label>Kategori Adı</label>
+        @Html.TextBoxFor(m => m.KategoriAd, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.KategoriAd, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top: 15px">
+        <button class="btn btn-info" id="btn1">Kategori Ekle</button>
+    </div>
+    <script>
+        $('#btn1').click(function () {
+            alert('Kategori ekleme işlemi yapıldı...!')
+        });
+    </script>
+</form>
+

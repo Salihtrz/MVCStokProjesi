@@ -1,0 +1,52 @@
+﻿@model MvcStokProjesi.Models.Entity.Tbl_Satislar
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">Satış Yap</button>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Satış Yapma Ekranı</h2>
+            </div>
+            <form method="post" action="/Satis/YeniSatis">
+                <div class="modal-body">
+                    <label>
+                        Ürün Adı
+                    </label>
+                    @*<input type="text" name="Urun" class="form-control" />*@
+                    @Html.DropDownListFor(m => m.Urun, (List<SelectListItem>)ViewBag.Urun, new { @class = "form-control" })
+                    <br />
+                    <label>
+                        Müşteri Adı Soyadı
+                    </label>
+                    @*<input type="text" name="Marka" class="form-control" />*@
+                    @Html.DropDownListFor(m => m.Musteri, (List<SelectListItem>)ViewBag.Musteri, new { @class = "form-control" })
+
+                    <br />
+                    <label>
+                        Adet
+                    </label>
+                    @*<input type="text" name="Marka" class="form-control" />*@
+                    @Html.TextBoxFor(m => m.Adet, new { @class = "form-control" })
+                    <br />
+                    <label>
+                        Fiyat
+                    </label>
+                    @*<input type="text" name="Marka" class="form-control" />*@
+                    @Html.TextBoxFor(m => m.Fiyat, new { @class = "form-control" })
+                    <button id="btn1" type="submit" class="btn btn-info" style="margin-top:20px;">Satış İşlemini Yap</button>
+                    <button type="button" class="btn btn-danger" style="margin-top:20px;" data-dismiss="modal">Vazgeç</button>
+                </div>
+            </form>
+            <script>
+                $('#btn1').click(function () {
+                    alert('Satış işlemi yapıldı...!')
+                });
+            </script>
+        </div>
+    </div>
+</div>
+

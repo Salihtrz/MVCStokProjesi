@@ -1,0 +1,40 @@
+﻿@model MvcStokProjesi.Models.Entity.Tbl_Urunler
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Ürünün Adı</label>
+        <input type="text" class="form-control" name="UrunAd" required="" maxlength="30" placeholder="Ürün adını giriniz." />
+    </div>                                   @*maxlength girilen değerden fazla karakter yazdırmaz.*@
+    <div>
+        @*placeholder yazılacak alanın bilgisini gösterir.*@
+        <label>Ürünün Markası</label>            @*required alanın boş geçilmesini önler.*@
+        <input type="text" class="form-control" name="Marka" required="" placeholder="Ürününüzün markasını giriniz." maxlength="30" />
+    </div>
+    <div>
+        <label>Ürünün Kategorisi</label>
+        @Html.DropDownListFor(m => m.Tbl_Kategoriler.KategoriID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+        @*m diye bir değer oluşturduk ve içine KategoriAd ı atadık. Sonra Viewbag.dgr komutundan taşımış olduğum öğeleri*@
+        @*SelectListItem ile seçtik. *@
+    </div>
+    <div>
+        <label>Ürünün Fiyatı</label>
+        <input type="text" class="form-control" name="Fiyat" required="" placeholder="Ürünün fiyatını giriniz." />
+    </div>
+    <div>
+        <label>Ürünün Kalan Stoğu</label>
+        <input type="text" class="form-control" name="Stok" required="" placeholder="Ürünün kalan stok sayısını giriniz." />
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="btn1">Ürün Ekle</button>
+    </div>
+    <script>
+    $('#btn1').click(function () {
+        alert('Ürün ekleme işlemi yapıldı...!')
+    });
+    </script>
+</form>
+
