@@ -5,7 +5,6 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
-
 <table class="table table-bordered" id="musteriler">
     <thead>
         <tr>
@@ -41,7 +40,6 @@
         </tr>
     </tfoot>
 </table>
-
 <script>
     $(document).ready(function () {
         $('#musteriler').DataTable({
@@ -66,6 +64,4 @@
         });
     });
 </script>
-
-
 <a href="/Musteriler/YeniMusteri/" class="btn btn-primary">YENİ MÜŞTERİ EKLE</a>

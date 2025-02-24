@@ -5,21 +5,12 @@
 }
 
 <form class="form-group" method="post">
-    @*<div>
-                <label>Müşteri Adı</label>
-                <input type="text" class="form-control" name="MusteriAd"
-    </div>*@
 
     <div>
         <label>Müşteri Adı</label>
         @Html.TextBoxFor(m => m.MusteriAd, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.MusteriAd, "", new { @style = "color:red" })
     </div>
-
-    @*<div>
-            <label>Müşteri Soyadı</label>
-            <input type="text" class="form-control" name="MusteriSoyad"
-    </div>*@
 
     <div>
         <label>Müşteri Soyadı</label>
